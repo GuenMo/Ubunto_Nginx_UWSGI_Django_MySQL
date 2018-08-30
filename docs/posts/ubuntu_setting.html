@@ -297,64 +297,70 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="ubuntu-&#xC6F9;-&#xC11C;&#xBC84;-&#xD658;&#xACBD;-&#xC124;&#xC815;">Ubuntu &#xC6F9; &#xC11C;&#xBC84; &#xD658;&#xACBD; &#xC124;&#xC815;</h1>
-<ol>
-<li><p>&#xC2DC;&#xC2A4;&#xD15C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;</p>
-<pre><code class="lang-commandline"> sudo apt-get update
- sudo apt-get upgrade
+<ul>
+<li>&#xC2DC;&#xC2A4;&#xD15C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;</li>
+</ul>
+<pre><code class="lang-commandline">sudo apt-get update
+sudo apt-get upgrade
 </code></pre>
-</li>
-<li><p>&#xD55C;&#xAD6D;&#xC5B4; &#xC124;&#xCE58;</p>
-<pre><code class="lang-commandline"> sudo apt-get install -y language-pack-ko language-pack-ko-base
- sudo nano /etc/default/locale
- LANG=&quot;ko_KR.UTF-8&quot;
- LANGUAGE=&quot;ko_KR:ko:en_US:en&quot;
- sudo dpkg-reconfigure locales
+<ul>
+<li>&#xD55C;&#xAD6D;&#xC5B4; &#xC124;&#xCE58;</li>
+</ul>
+<pre><code class="lang-commandline">sudo apt-get install -y language-pack-ko language-pack-ko-base
+sudo nano /etc/default/locale
+LANG=&quot;ko_KR.UTF-8&quot;
+LANGUAGE=&quot;ko_KR:ko:en_US:en&quot;
+sudo dpkg-reconfigure locales
 </code></pre>
-</li>
-<li><p>Build-essential &#xC124;&#xCE58;</p>
-<pre><code class="lang-commandline"> // &#xC7A5;&#xD45C;
- sudo apt-get install -y build-essential python3-dev python3-pip python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info libssl-dev python3-venv
+<ul>
+<li>Build-essential &#xC124;&#xCE58;</li>
+</ul>
+<pre><code class="lang-commandline">// &#xC7A5;&#xD45C;
+sudo apt-get install -y build-essential python3-dev python3-pip python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info libssl-dev python3-venv
 </code></pre>
-<pre><code class="lang-commandline"> apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev libmysqlclient-dev
+<pre><code class="lang-commandline">sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev libmysqlclient-dev
 </code></pre>
-</li>
-<li><p>git &#xC124;&#xCE58;</p>
-<pre><code class="lang-commandline"> apt-get instll git
+<ul>
+<li>git &#xC124;&#xCE58;</li>
+</ul>
+<pre><code class="lang-commandline">sudo apt-get instll git
 </code></pre>
-</li>
-<li><p>Nginx &#xC124;&#xCE58; &#xBC0F; &#xAD6C;&#xB3D9; &#xD655;&#xC778;</p>
-<pre><code class="lang-commandline"> sudo apt-get install -y nginx
- sudo systemctl status nginx
+<ul>
+<li>Nginx &#xC124;&#xCE58; &#xBC0F; &#xAD6C;&#xB3D9; &#xD655;&#xC778;</li>
+</ul>
+<pre><code class="lang-commandline">sudo apt-get install -y nginx
+sudo systemctl status nginx
 </code></pre>
-</li>
-<li><p>MySQL &#xC11C;&#xBC84; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xC124;&#xCE58;</p>
-<pre><code class="lang-commandline"> sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
+<ul>
+<li>MySQL &#xC11C;&#xBC84; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xC124;&#xCE58;</li>
+</ul>
+<pre><code class="lang-commandline">sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
 </code></pre>
-</li>
-<li><p>&#xBC30;&#xD3EC;&#xC6A9; &#xACC4;&#xC815; &#xB9CC;&#xB4E4;&#xAE30;</p>
-<pre><code class="lang-commandline"> sudo groupadd djangogroup
- sudo useradd &#x2013;g djangogroup &#x2013;b /home &#x2013;m &#x2013;s /bin/bash deployer
- sudo passwd deployer
+<ul>
+<li>&#xBC30;&#xD3EC;&#xC6A9; &#xACC4;&#xC815; &#xB9CC;&#xB4E4;&#xAE30;</li>
+</ul>
+<pre><code class="lang-commandline">sudo groupadd djangogroup
+sudo useradd &#x2013;g djangogroup &#x2013;b /home &#x2013;m &#x2013;s /bin/bash deployer
+sudo passwd deployer
 </code></pre>
-</li>
-<li><p>&#xC9C8;&#xBB38;</p>
-<pre><code class="lang-commandline"> # &#xC7A5;&#xD45C; &#xC9C8;&#xBB38;?
- sudo groupadd djangogroup # &#xD6C4;&#xBC18;&#xC5D0;&#xC11C;&#xB294; &#xADF8;&#xB8F9;&#xC744; www-data &#xC0AC;&#xC6A9;?
- sudo useradd &#x2013;g djangogroup &#x2013;b /home &#x2013;m &#x2013;s /bin/bash django # -s /bin/bash ?
- sudo passwd django
- sudo mkdir -p /var/www/onlineshop # &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xD3F4;&#xB354;&#xB294; &#xC704;&#xCE58;?
- sudo chown django:djangogroup /var/www/onlineshop
- sudo usermod &#x2013;a &#x2013;G djangogroup ubuntu # djangogroup django ? ubutu? -g -G &#xCC28;&#xC774;&#xC810; ubuntu &#xADF8;&#xB8F9; &#xD655;&#xC778;
- sudo chmod g+w /var/www/onlineshop
- # &#xC9C8;&#xBB38;?
- sudo visudo
- %&#xADF8;&#xB8F9;&#xC774;&#xB984; ALL=(ALL) ALL
- &#xC720;&#xC800;&#xC774;&#xB984; ALL=(ALL:ALL) ALL
- &#xADF8;&#xB8F9; &#xAD8C;&#xD55C; &#xACFC; &#xC720;&#xC800; &#xAD8C;&#xD55C; &#xAD6C;&#xBD84;
- djangogroup
+<ul>
+<li>&#xC9C8;&#xBB38;</li>
+</ul>
+<pre><code class="lang-commandline"># &#xC7A5;&#xD45C; &#xC9C8;&#xBB38;?
+sudo groupadd djangogroup # &#xD6C4;&#xBC18;&#xC5D0;&#xC11C;&#xB294; &#xADF8;&#xB8F9;&#xC744; www-data &#xC0AC;&#xC6A9;?
+sudo useradd &#x2013;g djangogroup &#x2013;b /home &#x2013;m &#x2013;s /bin/bash django # -s /bin/bash ?
+sudo passwd django
+sudo mkdir -p /var/www/onlineshop # &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xD3F4;&#xB354;&#xB294; &#xC704;&#xCE58;?
+sudo chown django:djangogroup /var/www/onlineshop
+sudo usermod &#x2013;a &#x2013;G djangogroup ubuntu # djangogroup django ? ubutu? -g -G &#xCC28;&#xC774;&#xC810; ubuntu &#xADF8;&#xB8F9; &#xD655;&#xC778;
+sudo chmod g+w /var/www/onlineshop
+# &#xC9C8;&#xBB38;?
+sudo visudo
+%&#xADF8;&#xB8F9;&#xC774;&#xB984; ALL=(ALL) ALL
+&#xC720;&#xC800;&#xC774;&#xB984; ALL=(ALL:ALL) ALL
+&#xADF8;&#xB8F9; &#xAD8C;&#xD55C; &#xACFC; &#xC720;&#xC800; &#xAD8C;&#xD55C; &#xAD6C;&#xBD84;
+djangogroup
 </code></pre>
-</li>
-</ol>
 
                                 
                                 </section>
@@ -398,7 +404,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Ubuntu","level":"1.1.4","depth":2,"next":{"title":"Storage","level":"1.1.5","depth":2,"path":"posts/storage.md","ref":"posts/storage.md","articles":[]},"previous":{"title":"SSH","level":"1.1.3","depth":2,"path":"posts/ssh.md","ref":"posts/ssh.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/ubuntu_setting.md","mtime":"2018-08-30T22:48:43.945Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T23:07:38.317Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ubuntu","level":"1.1.4","depth":2,"next":{"title":"Storage","level":"1.1.5","depth":2,"path":"posts/storage.md","ref":"posts/storage.md","articles":[]},"previous":{"title":"SSH","level":"1.1.3","depth":2,"path":"posts/ssh.md","ref":"posts/ssh.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/ubuntu_setting.md","mtime":"2018-08-30T23:33:40.029Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T23:33:47.680Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
