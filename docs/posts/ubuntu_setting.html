@@ -325,26 +325,30 @@ sudo systemctl status nginx
 </code></pre>
 </li>
 <li><p>&#xBC30;&#xD3EC;&#xC6A9; &#xACC4;&#xC815; &#xB9CC;&#xB4E4;&#xAE30;</p>
-<pre><code class="lang-commandline">sudo adduser deployer
+<pre><code class="lang-commandline">sudo groupadd djangogroup
+sudo useradd &#x2013;g djangogroup &#x2013;b /home &#x2013;m &#x2013;s /bin/bash deployer # /bin/bash ?
 sudo passwd deployer
-sudo addgroup admin
-sudo usermod -a -G admin deployer
+sudo mkdir -p /var/www/onlineshop
+sudo chown deployer:djangogroup /var/www/onlineshop
+sudo usermod &#x2013;a &#x2013;G djangogroup ubuntu
+sudo chmod g+w /var/www/onlineshop
 </code></pre>
 </li>
 <li><p>&#xC9C8;&#xBB38;</p>
 <pre><code class="lang-commandline"># &#xC7A5;&#xD45C; &#xC9C8;&#xBB38;? 
-sudo groupadd djangogroup # &#xD6C4;&#xBC18;&#xC5D0;&#xC11C;&#xB294; &#xADF8;&#xB8F9;&#xC744; www-data &#xC0AC;&#xC6A9;? 
-sudo useradd &#x2013;g djangogroup &#x2013;b /home &#x2013;m &#x2013;s /bin/bash django # &#xAF2D; &#xC774; &#xC635;&#xC158;&#xC73C;&#xB85C; &#xD574;&#xC57C; &#xD55C;&#xB294;&#xAC74;&#xC9C0;? /bin/bash ? &#xC2E4;&#xD589; &#xC548;&#xB428;
+sudo groupadd djangogroup # &#xD6C4;&#xBC18;&#xC5D0;&#xC11C;&#xB294; &#xADF8;&#xB8F9;&#xC744; www-data &#xC0AC;&#xC6A9;?
+sudo useradd &#x2013;g djangogroup &#x2013;b /home &#x2013;m &#x2013;s /bin/bash django # -s /bin/bash ?
 sudo passwd django
 sudo mkdir -p /var/www/onlineshop # &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xD3F4;&#xB354;&#xB294; &#xC704;&#xCE58;?
 sudo chown django:djangogroup /var/www/onlineshop
 sudo usermod &#x2013;a &#x2013;G djangogroup ubuntu # djangogroup django ? ubutu? -g -G &#xCC28;&#xC774;&#xC810;
-sudo chmod g+w /var/www/onlineshop # g+w ?
+sudo chmod g+w /var/www/onlineshop
 # &#xC9C8;&#xBB38;?
 sudo visudo
 %&#xADF8;&#xB8F9;&#xC774;&#xB984; ALL=(ALL) ALL
 &#xC720;&#xC800;&#xC774;&#xB984; ALL=(ALL:ALL) ALL
 &#xADF8;&#xB8F9; &#xAD8C;&#xD55C; &#xACFC; &#xC720;&#xC800; &#xAD8C;&#xD55C; &#xAD6C;&#xBD84;
+djangogroup
 </code></pre>
 </li>
 </ol>
@@ -391,7 +395,7 @@ sudo visudo
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Ubuntu","level":"1.1.4","depth":2,"next":{"title":"Storage","level":"1.1.5","depth":2,"path":"posts/storage.md","ref":"posts/storage.md","articles":[]},"previous":{"title":"SSH","level":"1.1.3","depth":2,"path":"posts/ssh.md","ref":"posts/ssh.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/ubuntu_setting.md","mtime":"2018-08-30T00:20:29.271Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T20:44:41.506Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Ubuntu","level":"1.1.4","depth":2,"next":{"title":"Storage","level":"1.1.5","depth":2,"path":"posts/storage.md","ref":"posts/storage.md","articles":[]},"previous":{"title":"SSH","level":"1.1.3","depth":2,"path":"posts/ssh.md","ref":"posts/ssh.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/ubuntu_setting.md","mtime":"2018-08-30T21:07:42.873Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T21:08:39.422Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
