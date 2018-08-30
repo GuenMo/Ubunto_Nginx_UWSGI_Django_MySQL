@@ -1,0 +1,419 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>SSH · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ubuntu_setting.html" />
+    
+    
+    <link rel="prev" href="ubuntu_install.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="virtualbox.html">
+            
+                <a href="virtualbox.html">
+            
+                    
+                    Vertual Box
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="ubuntu_install.html">
+            
+                <a href="ubuntu_install.html">
+            
+                    
+                    Ubuntu Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.3" data-path="ssh.html">
+            
+                <a href="ssh.html">
+            
+                    
+                    SSH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="ubuntu_setting.html">
+            
+                <a href="ubuntu_setting.html">
+            
+                    
+                    Ubuntu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="storage.html">
+            
+                <a href="storage.html">
+            
+                    
+                    Storage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="mysql.html">
+            
+                <a href="mysql.html">
+            
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="django.html">
+            
+                <a href="django.html">
+            
+                    
+                    Django
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="uwsgi.html">
+            
+                <a href="uwsgi.html">
+            
+                    
+                    Uwsgi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="nginx.html">
+            
+                <a href="nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="linux.html">
+            
+                <a href="linux.html">
+            
+                    
+                    Linux Tip
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="dev_plan.html">
+            
+                <a href="dev_plan.html">
+            
+                    
+                    Plan
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >SSH</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ssh">SSH</h1>
+<h2 id="&#xC708;&#xB3C4;&#xC6B0;&#xC6A9;-ssh-&#xC124;&#xCE58;">&#xC708;&#xB3C4;&#xC6B0;&#xC6A9; SSH &#xC124;&#xCE58;</h2>
+<blockquote>
+<p><a href="http://cmder.net/" target="_blank">http://cmder.net/</a></p>
+</blockquote>
+<h2 id="&#xBE44;&#xBC00;&#xBC88;&#xD638;&#xB85C;-&#xC811;&#xC18D;">&#xBE44;&#xBC00;&#xBC88;&#xD638;&#xB85C; &#xC811;&#xC18D;</h2>
+<p>Cmder &#xB97C; &#xC2E4;&#xD589; &#xC2DC;&#xD0A4;&#xACE0; &#xC544;&#xB798; &#xBA85;&#xB839;&#xC5B4;&#xB85C; &#xC811;&#xC18D;</p>
+<pre><code class="lang-commandline">ssh username@remote_host
+</code></pre>
+<h2 id="rsa-key&#xB85C;-&#xC811;&#xC18D;">RSA Key&#xB85C; &#xC811;&#xC18D;</h2>
+<ul>
+<li>Key Pair &#xB97C; &#xB9CC;&#xB4E0;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-commandline">ssh-keygen
+// Output
+Generating public/private rsa key pair.
+Enter file in which to save the key (/your_home/.ssh/id_rsa):
+</code></pre>
+<ul>
+<li>Rsa key&#xAC00; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; &#xD3F4;&#xB354;&#xB85C; &#xC774;&#xB3D9; &#xD55C;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-commandline">cd /your_home/.ssh/
+</code></pre>
+<ul>
+<li>&#xD37C;&#xBE14;&#xB9AD;&#xD0A4;&#xB97C; &#xC11C;&#xBC84;&#xB85C; &#xBCF5;&#xC0AC; &#xD55C;&#xB2E4;.</li>
+</ul>
+<pre><code class="lang-commandline">cat ~/.ssh/id_rsa.pub | ssh username@remote_host &quot;mkdir -p ~/.ssh &amp;&amp; touch ~/.ssh/authorized_keys &amp;&amp; chmod -R go= ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;
+// Output
+The authenticity of host &apos;203.0.113.1 (203.0.113.1)&apos; can&apos;t be established.
+ECDSA key fingerprint is fd:fd:d4:f9:77:fe:73:84:e1:55:00:ad:d6:6d:22:fe.
+Are you sure you want to continue connecting (yes/no)? yes
+// Output
+username@203.0.113.1&apos;s password:
+</code></pre>
+<blockquote>
+<p>&#xCC38;&#xACE0; <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1604" target="_blank">https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1604</a></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ubuntu_install.html" class="navigation navigation-prev " aria-label="Previous page: Ubuntu Install">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ubuntu_setting.html" class="navigation navigation-next " aria-label="Next page: Ubuntu">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SSH","level":"1.1.3","depth":2,"next":{"title":"Ubuntu","level":"1.1.4","depth":2,"path":"posts/ubuntu_setting.md","ref":"posts/ubuntu_setting.md","articles":[]},"previous":{"title":"Ubuntu Install","level":"1.1.2","depth":2,"path":"posts/ubuntu_install.md","ref":"posts/ubuntu_install.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/ssh.md","mtime":"2018-08-30T12:48:00.552Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T22:26:16.260Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
