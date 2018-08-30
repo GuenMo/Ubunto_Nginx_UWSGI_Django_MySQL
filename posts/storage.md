@@ -15,7 +15,7 @@ mount -t cifs //ip_addres/Project /mnt/ISSAC/Project -o username="XXXXXX",passwo
 - 마운트 해제
 
 ```commandline
-umount //192.168.150.18/Project/test_server
+umount //ip_addres/Project
 ```
 
 - 부팅시 자동 마운트
