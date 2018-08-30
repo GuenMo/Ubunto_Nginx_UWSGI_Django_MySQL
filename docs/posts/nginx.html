@@ -297,6 +297,28 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="nginx">Nginx</h1>
+<ul>
+<li>Nginx &#xC124;&#xCE58;</li>
+</ul>
+<pre><code class="lang-commandline">sudo apt-get install nginx
+</code></pre>
+<ul>
+<li>&#xAD6C;&#xB3D9; &#xD655;&#xC778;</li>
+</ul>
+<pre><code class="lang-commandline">sudo systemctl status nginx
+</code></pre>
+<p>&#xC6F9; &#xBE0C;&#xB77C;&#xC6B0;&#xC838;&#xC5D0;&#xC11C; &#xC11C;&#xBC84; IP &#xC785;&#xB825; &#xD574;&#xBCF8;&#xB2E4;.
+<img src="../img/nginx01.png" alt="Local Image"></p>
+<ul>
+<li>&#xC7A5;&#xD45C; &#xB0B4;&#xC6A9;</li>
+</ul>
+<pre><code class="lang-commandline">sudo ln -s /etc/nginx/sites-available/onlineshop /etc/nginx/sites-enabled/
+sudo vim /etc/nginx/nginx.conf
+//&#xB0B4;&#xC6A9; &#xC218;&#xC815;
+server_name_hask_bucket_size 128
+sudo nginx &#x2013;t
+sudo systemctl restart nginx
+</code></pre>
 
                                 
                                 </section>
@@ -340,7 +362,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Nginx","level":"1.1.9","depth":2,"next":{"title":"Linux Tip","level":"1.2","depth":1,"path":"posts/linux.md","ref":"posts/linux.md","articles":[]},"previous":{"title":"Uwsgi","level":"1.1.8","depth":2,"path":"posts/uwsgi.md","ref":"posts/uwsgi.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/nginx.md","mtime":"2018-08-29T14:30:11.295Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T21:11:43.186Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Nginx","level":"1.1.9","depth":2,"next":{"title":"Linux Tip","level":"1.2","depth":1,"path":"posts/linux.md","ref":"posts/linux.md","articles":[]},"previous":{"title":"Uwsgi","level":"1.1.8","depth":2,"path":"posts/uwsgi.md","ref":"posts/uwsgi.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/nginx.md","mtime":"2018-08-30T21:36:01.806Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T21:36:16.871Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
