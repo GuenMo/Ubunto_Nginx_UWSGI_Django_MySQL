@@ -313,7 +313,7 @@ sudo chmod g+w /var/www/onlineshop
 <p><code>run</code>&#xACFC; <code>logs</code> &#xD3F4;&#xB354;&#xC758; &#xADF8;&#xB8F9;&#xC124;&#xC815;&#xC744; <code>www-data</code>?</p>
 <p>python 3.5.2 &#xC5D0;&#xC11C; apt install python-django-common &#xC744; &#xC124;&#xCE58;&#xD574;&#xC57C; django&#xAC00; &#xC124;&#xCE58; &#xB41C;&#xB2E4;?</p>
 <p><img src="../img/uwsgi_install_error.png" alt="uwsgi-error"></p>
-<p>&#xAD8C;&#xD55C; &#xC18C;&#xC720;?</p>
+<p>&#xAD8C;&#xD55C;,&#xC18C;&#xC720;, &#xC2E4;&#xD589;?</p>
 <p><img src="../img/uwsgi_install_error2.png" alt="uwsgi-error"></p>
 <pre><code class="lang-commandline">cd /var/www/onlineshop
 sudo python3 -m venv venv
@@ -325,6 +325,65 @@ source venv/bin/activate
 sudo mkdir run logs ssl // root ?
 sudo chown django:www-data run // www-data?
 sudo chown django:www-data logs // www-data?
+</code></pre>
+<p>&#xC2E4;&#xD328; &#x315C;&#x315C;</p>
+<ul>
+<li>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xD658;&#xACBD; &#xC124;&#xC815;</li>
+</ul>
+<pre><code class="lang-commandline">apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev libmysqlclient-dev
+</code></pre>
+<ul>
+<li>pyenv &#xC124;&#xCE58;</li>
+</ul>
+<blockquote>
+<p>pyenv&#xB780; &#xBB34;&#xC5C7;&#xC778;&#xAC00;?
+pyenv&#xB780; &#xC5EC;&#xB7EC; &#xBC84;&#xC804;&#xC758; Python&#xC744; &#xC27D;&#xAC8C; &#xBC14;&#xAFD4;&#xC11C; &#xC4F8; &#xC218; &#xC788;&#xAC8C; &#xD574;&#xC8FC;&#xB294; &#xB3C4;&#xAD6C;&#xC774;&#xB2E4;.
+&#xC608;&#xB97C; &#xB4E4;&#xBA74; 3.5.2&#xBC84;&#xC804;&#xC744; &#xC4F0;&#xB2E4;&#xAC00;, &#xBA85;&#xB839;&#xC5B4; &#xD55C; &#xC904;&#xB85C; 2.7.12&#xB85C; &#xBC84;&#xC804;&#xC744; &#xBC14;&#xAFB8;&#xC5B4;&#xC11C; &#xC4F8; &#xC218; &#xC788;&#xAC8C; &#xD574;&#xC900;&#xB2E4;.
+&#xC774;&#xB294; pyenv-virtualenv&#xC640; &#xAC19;&#xC774; &#xC4F0;&#xBA74; &#xB354;&#xC6B1; &#xD65C;&#xC6A9;&#xB3C4;&#xAC00; &#xB192;&#xC544;&#xC9C4;&#xB2E4;.</p>
+</blockquote>
+<p>git clone &#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC18C;&#xC2A4;&#xB97C; &#xB2E4;&#xC6B4;&#xBC1B;&#xACE0; &#xBA87; &#xAC00;&#xC9C0; &#xC124;&#xC815;&#xC744; &#xD574;&#xC900;&#xB2E4;.</p>
+<pre><code class="lang-commandline">git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+echo &apos;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&apos; &gt;&gt; ~/.bash_profile
+echo &apos;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile
+echo &apos;eval &quot;$(pyenv init -)&quot;&apos; &gt;&gt; ~/.bash_profile
+</code></pre>
+<p>&#xC124;&#xCE58; &#xD655;&#xC778;</p>
+<pre><code class="lang-commandline">source ~/.bash_profile
+pyenv versions
+</code></pre>
+<ul>
+<li>python &#xC124;&#xCE58;</li>
+</ul>
+<p>&#xC6D0;&#xD558;&#xB294; python &#xBC84;&#xC804;&#xC744; &#xC124;&#xCE58; &#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-commandline">pyenv install 3.6.6
+</code></pre>
+<p>&#xC124;&#xCE58; &#xD655;&#xC778;</p>
+<pre><code class="lang-commandline">pyenv versions
+pyenv shell 3.6.6
+python --version
+</code></pre>
+<ul>
+<li>python-virtualenv &#xC124;&#xCE58;</li>
+</ul>
+<pre><code class="lang-commandline">apt-get install python-virtualenv
+</code></pre>
+<ul>
+<li>virtualenv &#xD65C;&#xC131;&#xD654;</li>
+</ul>
+<pre><code class="lang-commandline">cd /var/www/onlineshop
+virtualenv --python=python3 venv
+source venv/bin/activate
+</code></pre>
+<ul>
+<li>Django &#xC124;&#xCE58;</li>
+</ul>
+<pre><code class="lang-commandline">pip install django
+</code></pre>
+<ul>
+<li>uWSGI &#xC124;&#xCE58;</li>
+</ul>
+<pre><code class="lang-commandline">pip install uwsgi
 </code></pre>
 
                                 
@@ -369,7 +428,7 @@ sudo chown django:www-data logs // www-data?
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Django","level":"1.1.7","depth":2,"next":{"title":"Uwsgi","level":"1.1.8","depth":2,"path":"posts/uwsgi.md","ref":"posts/uwsgi.md","articles":[]},"previous":{"title":"Mysql","level":"1.1.6","depth":2,"path":"posts/mysql.md","ref":"posts/mysql.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/django.md","mtime":"2018-08-30T22:26:08.701Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T22:26:16.260Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Django","level":"1.1.7","depth":2,"next":{"title":"Uwsgi","level":"1.1.8","depth":2,"path":"posts/uwsgi.md","ref":"posts/uwsgi.md","articles":[]},"previous":{"title":"Mysql","level":"1.1.6","depth":2,"path":"posts/mysql.md","ref":"posts/mysql.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/django.md","mtime":"2018-08-30T23:07:29.040Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T23:07:38.317Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -20,23 +20,34 @@
 3. Build-essential 설치
 
     ```commandline
+    // 장표
     sudo apt-get install -y build-essential python3-dev python3-pip python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info libssl-dev python3-venv
     ```
+    
+    ```commandline
+    apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev libmysqlclient-dev
+    ```
 
-4. Nginx 설치 및 구동 확인
+4. git 설치
+
+    ```commandline
+    apt-get instll git
+    ```
+
+5. Nginx 설치 및 구동 확인
 
     ```commandline
     sudo apt-get install -y nginx
     sudo systemctl status nginx
     ```
 
-5. MySQL 서버 클라이언트 설치
+6. MySQL 서버 클라이언트 설치
 
     ```commandline
     sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
     ```
 
-6. 배포용 계정 만들기
+7. 배포용 계정 만들기
 
     ```commandline
     sudo groupadd djangogroup
@@ -44,7 +55,7 @@
     sudo passwd deployer
     ```
 
-7. 질문
+8. 질문
 
     ```commandline
     # 장표 질문?
