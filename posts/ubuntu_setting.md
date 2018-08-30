@@ -40,12 +40,8 @@
 
     ```commandline
     sudo groupadd djangogroup
-    sudo useradd –g djangogroup –b /home –m –s /bin/bash deployer # /bin/bash ?
+    sudo useradd –g djangogroup –b /home –m –s /bin/bash deployer
     sudo passwd deployer
-    sudo mkdir -p /var/www/onlineshop
-    sudo chown deployer:djangogroup /var/www/onlineshop
-    sudo usermod –a –G djangogroup ubuntu
-    sudo chmod g+w /var/www/onlineshop
     ```
 
 7. 질문
@@ -57,7 +53,7 @@
     sudo passwd django
     sudo mkdir -p /var/www/onlineshop # 프로젝트 폴더는 위치?
     sudo chown django:djangogroup /var/www/onlineshop
-    sudo usermod –a –G djangogroup ubuntu # djangogroup django ? ubutu? -g -G 차이점
+    sudo usermod –a –G djangogroup ubuntu # djangogroup django ? ubutu? -g -G 차이점 ubuntu 그룹 확인
     sudo chmod g+w /var/www/onlineshop
     # 질문?
     sudo visudo
