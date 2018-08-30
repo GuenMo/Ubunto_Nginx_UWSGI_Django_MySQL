@@ -13,4 +13,5 @@
 - [Linux Tip](posts/tip/linux.md)
   - [Command](posts/tip/linux_cmd.md)
   - [Permission](posts/tip/linux_permission.md)
+- [Plan](posts/dev_plan.md)
   
