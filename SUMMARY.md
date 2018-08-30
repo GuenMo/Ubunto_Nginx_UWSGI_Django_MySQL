@@ -10,8 +10,6 @@
   - [Django](posts/django.md)
   - [Uwsgi](posts/uwsgi.md)
   - [Nginx](posts/nginx.md)
-- [Linux Tip](posts/tip/linux.md)
-  - [Command](posts/tip/linux_cmd.md)
-  - [Permission](posts/tip/linux_permission.md)
+- [Linux Tip](posts/linux.md)
 - [Plan](posts/dev_plan.md)
   
