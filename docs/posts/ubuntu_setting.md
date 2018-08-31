@@ -1,5 +1,7 @@
 # Ubuntu 웹 서버 환경 설정
 
+## 배포용 유저 생성
+
 > <http://cmder.net/>
 
 - Root Login
@@ -52,6 +54,8 @@ ssh deployer@remote_host
 
 > 참고 <https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1604>
 
+## Ubuntu Setting
+
 - 시스템 업데이트
 
 ```commandline
@@ -98,8 +102,6 @@ sudo systemctl status nginx
 ```commandline
 sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
 ```
-
-
 
 - 질문
 
