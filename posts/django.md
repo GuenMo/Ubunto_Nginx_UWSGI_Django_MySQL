@@ -9,12 +9,6 @@ sudo usermod -a -G djangogroup ubuntu
 sudo chmod g+w /var/www/onlineshop
 ```
 
-- 프로젝트 환경 설정
-
-```commandline
-apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev libmysqlclient-dev
-```
-
 - pyenv 설치
 
 ```commandline
@@ -66,4 +60,26 @@ source venv/bin/activate
 
 ```commandline
 pip install django
+```
+
+- 테스트 프로젝트 생성
+
+```commandline
+djang-admin startproject mysite .
+python manage.py migrate
+python manage.py createsuperuser
+```
+
+- 프로젝트 셋팅 변경
+
+```commandline
+nano mysite/settings.py
+ALLOWED_HOSTS = ['*']
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+```
+
+- static files 모으기
+  
+```commandline
+python manage.py collectstatic
 ```
