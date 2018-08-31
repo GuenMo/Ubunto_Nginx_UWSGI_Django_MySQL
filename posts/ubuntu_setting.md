@@ -1,5 +1,42 @@
 # Ubuntu 웹 서버 환경 설정
 
+## Ubuntu Setting
+
+- 시스템 업데이트
+
+```commandline
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+- 한국어 설치
+
+```commandline
+sudo apt-get install -y language-pack-ko language-pack-ko-base
+sudo nano /etc/default/locale
+LANG="ko_KR.UTF-8"
+LANGUAGE="ko_KR:ko:en_US:en"
+sudo dpkg-reconfigure locales
+```
+
+- Build-essential 설치
+
+```commandline
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3.6-dev
+```
+
+- git 설치
+
+```commandline
+sudo apt-get install git
+```
+
+- MySQL 서버 클라이언트 설치
+
+```commandline
+sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
+```
+
 ## 배포용 유저 생성
 
 > <http://cmder.net/>
@@ -54,43 +91,6 @@ ssh deployer@remote_host
 ```
 
 > 참고 <https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1604>
-
-## Ubuntu Setting
-
-- 시스템 업데이트
-
-```commandline
-sudo apt-get update
-sudo apt-get upgrade
-```
-
-- 한국어 설치
-
-```commandline
-sudo apt-get install -y language-pack-ko language-pack-ko-base
-sudo nano /etc/default/locale
-LANG="ko_KR.UTF-8"
-LANGUAGE="ko_KR:ko:en_US:en"
-sudo dpkg-reconfigure locales
-```
-
-- Build-essential 설치
-
-```commandline
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3.6-dev
-```
-
-- git 설치
-
-```commandline
-sudo apt-get install git
-```
-
-- MySQL 서버 클라이언트 설치
-
-```commandline
-sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
-```
 
 ## 네트워크 드라이브
 
