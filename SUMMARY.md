@@ -5,7 +5,7 @@
   - [Ubuntu Install](posts/ubuntu_install.md)
   - [Ubuntu](posts/ubuntu_setting.md)
   - [Django](posts/django.md)
-  - [Uwsgi](posts/uwsgi.md)
+  - [uWSGI](posts/uwsgi.md)
   - [Nginx](posts/nginx.md)
   - [Mysql](posts/mysql.md)
 - [Linux Tip](posts/linux.md)
