@@ -3,7 +3,6 @@
 - [Introduction](README.md)
   - [Vertual Box](posts/virtualbox.md)
   - [Ubuntu Install](posts/ubuntu_install.md)
-  - [SSH](posts/ssh.md)
   - [Ubuntu](posts/ubuntu_setting.md)
   - [Storage](posts/storage.md)
   - [Mysql](posts/mysql.md)
