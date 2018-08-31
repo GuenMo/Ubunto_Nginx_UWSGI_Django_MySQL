@@ -81,20 +81,13 @@ sudo apt-get install -y build-essential python3-dev python3-pip python3-cffi lib
 ```
 
 ```commandline
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev libmysqlclient-dev
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
 ```
 
 - git 설치
 
 ```commandline
-sudo apt-get instll git
-```
-
-- Nginx 설치 및 구동 확인
-
-```commandline
-sudo apt-get install -y nginx
-sudo systemctl status nginx
+sudo apt-get install git
 ```
 
 - MySQL 서버 클라이언트 설치

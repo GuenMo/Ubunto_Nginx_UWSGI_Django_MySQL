@@ -4,7 +4,7 @@
 
 ```commandline
 sudo mkdir -p /var/www/onlineshop
-sudo chown deployer:djangogroup /var/www/onlineshop
+sudo chown deployer:sudo /var/www/onlineshop
 sudo usermod -a -G djangogroup ubuntu
 sudo chmod g+w /var/www/onlineshop
 ```
