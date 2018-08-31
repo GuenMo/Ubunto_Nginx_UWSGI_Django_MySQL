@@ -16,9 +16,7 @@
 
 - 작업자(Client)는 다음과 같은 두가지 방법으로 DB에 접속 할수 있다.
 
-![Local Image](/img/introduction/introuduction02.png)
-
-![Local Image](/img/introduction/introuduction03.png)
+![Local Image](/img/introduction/introuduction04.png)
 
 - OS: Window, Linux, (iOS, Android)
 

@@ -83,3 +83,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 ```commandline
 python manage.py collectstatic
 ```
+
+- 서버 구동 테스트
+
+```commandline
+python manage.py runserver 0.0.0.0:8080
+```
