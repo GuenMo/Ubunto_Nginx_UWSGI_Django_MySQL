@@ -15,7 +15,8 @@ ssh root_user@remote_host
 - 배포용 계정 만들기
 
 ```commandline
-sudo useradd –g sudo –b /home –m –s /bin/bash deployer
+sudo groupadd djangogroup
+sudo useradd –g djangogroup –b /home –m –s /bin/bash deployer
 sudo passwd deployer
 ```
 
@@ -74,11 +75,6 @@ sudo dpkg-reconfigure locales
 ```
 
 - Build-essential 설치
-
-```commandline
-// 장표
-sudo apt-get install -y build-essential python3-dev python3-pip python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info libssl-dev python3-venv
-```
 
 ```commandline
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
