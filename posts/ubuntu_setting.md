@@ -1,5 +1,57 @@
 # Ubuntu 웹 서버 환경 설정
 
+> <http://cmder.net/>
+
+- Root Login
+
+Cmder 를 실행 시키고 아래 명령어로 접속
+
+```commandline
+ssh root_user@remote_host
+```
+
+- 배포용 계정 만들기
+
+```commandline
+sudo useradd –g sudo –b /home –m –s /bin/bash deployer
+sudo passwd deployer
+```
+
+- 새로운 Cmder 열어서 Key Pair 생성
+
+```commandline
+ssh-keygen
+// Output
+Generating public/private rsa key pair.
+Enter file in which to save the key (/your_home/.ssh/id_rsa):
+```
+
+- Rsa key가 만들어진 폴더로 이동
+
+```commandline
+cd /your_home/.ssh/
+```
+
+- 퍼블릭 키 서버로 복사
+
+```commandline
+cat ~/.ssh/id_rsa.pub | ssh deployer@remote_host "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
+// Output
+The authenticity of host '203.0.113.1 (203.0.113.1)' can't be established.
+ECDSA key fingerprint is fd:fd:d4:f9:77:fe:73:84:e1:55:00:ad:d6:6d:22:fe.
+Are you sure you want to continue connecting (yes/no)? yes
+// Output
+deployer@203.0.113.1's password:
+```
+
+- 퍼블릭 키로 login
+
+```commandline
+ssh deployer@remote_host
+```
+
+> 참고 <https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1604>
+
 - 시스템 업데이트
 
 ```commandline
@@ -47,13 +99,7 @@ sudo systemctl status nginx
 sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
 ```
 
-- 배포용 계정 만들기
 
-```commandline
-sudo groupadd djangogroup
-sudo useradd –g djangogroup –b /home –m –s /bin/bash deployer
-sudo passwd deployer
-```
 
 - 질문
 
