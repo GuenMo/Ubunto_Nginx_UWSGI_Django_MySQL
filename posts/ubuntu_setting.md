@@ -10,9 +10,6 @@ cmdr을 실행하고 `ssh-keygen`을 실행 한다.
 
 ```commandline
 ssh-keygen
-// Output
-Generating public/private rsa key pair.
-Enter file in which to save the key (/your_home/.ssh/id_rsa):
 ```
 
 - Rsa key가 만들어진 폴더로 이동
@@ -51,15 +48,25 @@ sudo apt-get upgrade
 ```commandline
 sudo apt-get install -y language-pack-ko language-pack-ko-base
 sudo nano /etc/default/locale
+```
+
+아래 내용 으로 수정
+
+```command
 LANG="ko_KR.UTF-8"
 LANGUAGE="ko_KR:ko:en_US:en"
+```
+
+![Local Image](/img/ubuntu_setting/ubuntu_setting01.png)
+
+```command
 sudo dpkg-reconfigure locales
 ```
 
 - Build-essential 설치
 
 ```commandline
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3.6-dev
+sudo apt-get install -y build-essential python3-dev python3-pip python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info libssl-dev python3-venv
 ```
 
 - git 설치
