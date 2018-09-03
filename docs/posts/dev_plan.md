@@ -37,7 +37,7 @@
 
 ## 필요한 기술
 
-### Front Hand
+### Frontend
 
 - Javascript
 - Type Script
@@ -46,7 +46,7 @@
 - Bootstrap
 - ionic
 
-### Back Hand
+### Backend
 
 - Python
 - Django

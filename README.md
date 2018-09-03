@@ -28,9 +28,9 @@
 
 - OS: Linux
 
-- Backhand: Django, REST, UWSGI
+- Backend: Django, REST, UWSGI
 
-- Fronthand: Bootstrap4, JavaScript, jQurey, Vue
+- Frontend: Bootstrap4, JavaScript, jQurey, Vue
 
 - Server: Nginx
   
