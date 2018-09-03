@@ -35,7 +35,7 @@ python manage.py createsuperuser
 - 데이터베이스 소유 변경
 
 ```commandline
-sudo chown deployer:www-data db.sqlinte3
+sudo chown deployer:www-data db.sqlite3
 ```
 
 - 프로젝트 셋팅 변경

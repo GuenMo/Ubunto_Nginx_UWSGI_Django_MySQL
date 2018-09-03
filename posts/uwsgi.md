@@ -4,6 +4,7 @@
 
 ```commandline
 sudo -s
+source venv/bin/activate
 pip install uwsgi
 ```
 

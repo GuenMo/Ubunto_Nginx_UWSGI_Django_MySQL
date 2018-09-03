@@ -18,7 +18,7 @@ sudo systemctl status nginx
 - uWSGI를 Nginx에 연결
 
 ```commandline
-sudo nano /etc/nginx/sites-avaliable/onlineshop
+sudo nano /etc/nginx/sites-available/onlineshop
 
 upstream django {
     server unix:/var/www/onlineshop/run/uwsgi.sock;
@@ -58,6 +58,6 @@ server_name_hask_bucket_size 128
 - Nginx 재실행
 
 ```commandline
-sudo nginx –t
+sudo nginx -t
 sudo systemctl restart nginx
 ```
