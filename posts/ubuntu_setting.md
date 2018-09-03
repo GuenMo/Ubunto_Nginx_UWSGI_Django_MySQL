@@ -47,12 +47,13 @@ sudo apt-get upgrade
 
 ```commandline
 sudo apt-get install -y language-pack-ko language-pack-ko-base
-sudo nano /etc/default/locale
 ```
 
-아래 내용 으로 수정
+`/etc/default/locale` 수정
 
 ```command
+sudo nano /etc/default/locale
+
 LANG="ko_KR.UTF-8"
 LANGUAGE="ko_KR:ko:en_US:en"
 ```
