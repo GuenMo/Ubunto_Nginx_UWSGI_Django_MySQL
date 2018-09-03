@@ -274,12 +274,14 @@
 <ul>
 <li>uWSGI &#xC124;&#xCE58;</li>
 </ul>
-<pre><code class="lang-commandline">pip install uwsgi
+<pre><code class="lang-commandline">sudo -s
+pip install uwsgi
 </code></pre>
 <ul>
 <li>&#xC11C;&#xBC84; &#xAD6C;&#xB3D9; &#xD14C;&#xC2A4;&#xD2B8;</li>
 </ul>
-<pre><code class="lang-commandline">uwsgi --http :8080 --home /var/www/onlineshop/venv/ --chdir /var/www/onlineshop/ --module mysite.wsgi
+<pre><code class="lang-commandline">uwsgi --http :8000 --home /var/www/onlineshop/venv/ --chdir /var/www/onlineshop/ --module mysite.wsgi
+deactivate
 </code></pre>
 <blockquote>
 <p>admin &#xD398;&#xC774;&#xC9C0;&#xC5D0; &#xC811;&#xC18D;&#xD574;&#xBCF4;&#xBA74; static &#xD30C;&#xC77C;&#xB4E4;&#xC774; &#xAE30;&#xB2A5;&#xC744; &#xBABB;&#xD558;&#xACE0; &#xC788;&#xB2E4;. &#xC774;&#xB294; nginx&#xC5D0;&#xC11C; &#xCC98;&#xB9AC; &#xD574;&#xC900;&#xB2E4;.</p>
@@ -291,6 +293,51 @@
 sudo mkdir run logs ssl
 sudo chown deployer:www-data run
 sudo chown deployer:www-data logs
+</code></pre>
+<ul>
+<li>uwsgi.ini &#xD30C;&#xC77C; &#xCD94;&#xAC00;</li>
+</ul>
+<pre><code class="lang-commandline">sudo nano /var/www/onlineshop/run/uwsgi.ini
+
+[uwsgi]
+uid = deployer
+base = /var/www/onlineshop
+home = %(base)/venv
+chdir = %(base)
+module = mysite.wsgi:application
+env = DJANGO_SETTINGS_MODULE=mysite.settings
+master = true
+processes = 5
+socket = %(base)/run/uwsgi.sock
+logto = %(base)/logs/uwsgi.log
+chown-socket = %(uid):www-data
+chmod-socket = 660
+vacuum = true
+</code></pre>
+<ul>
+<li>uwsgi.service &#xCD94;&#xAC00;</li>
+</ul>
+<pre><code class="lang-commandline">sudo nano /etc/systemd/system/uwsgi.service
+
+[Unit]
+Description=uWSGI Emperor service
+
+[Service]
+ExecStart=/var/www/onlineshop/venv/bin/uwsgi --emperor /var/www/onlineshop/run
+User=deployer
+Group=www-data
+Restart=on-failure
+KillSignal=SIGQUIT
+Type=notify
+NotifyAccess=all
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<pre><code class="lang-commandline">sudo systemctl start uwsgi
+sudo systemctl enable uwsgi
+sudo systemctl status uwsgi
 </code></pre>
 
                                 
@@ -335,7 +382,7 @@ sudo chown deployer:www-data logs
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"uWSGI","level":"1.1.5","depth":2,"next":{"title":"Nginx","level":"1.1.6","depth":2,"path":"posts/nginx.md","ref":"posts/nginx.md","articles":[]},"previous":{"title":"Django","level":"1.1.4","depth":2,"path":"posts/django.md","ref":"posts/django.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/uwsgi.md","mtime":"2018-08-31T02:59:06.921Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-03T07:17:06.972Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"uWSGI","level":"1.1.5","depth":2,"next":{"title":"Nginx","level":"1.1.6","depth":2,"path":"posts/nginx.md","ref":"posts/nginx.md","articles":[]},"previous":{"title":"Django","level":"1.1.4","depth":2,"path":"posts/django.md","ref":"posts/django.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/uwsgi.md","mtime":"2018-09-03T07:50:15.045Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-03T08:08:43.292Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

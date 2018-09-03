@@ -280,52 +280,29 @@ sudo usermod -a -G djangogroup ubuntu
 sudo chmod g+w /var/www/onlineshop
 </code></pre>
 <ul>
-<li>pyenv &#xC124;&#xCE58;</li>
-</ul>
-<pre><code class="lang-commandline">git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-
-echo &apos;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&apos; &gt;&gt; ~/.bash_profile
-echo &apos;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile
-echo &apos;eval &quot;$(pyenv init -)&quot;&apos; &gt;&gt; ~/.bash_profile
-</code></pre>
-<p>&#xC124;&#xCE58; &#xD655;&#xC778;</p>
-<pre><code class="lang-commandline">source ~/.bash_profile
-pyenv versions
-</code></pre>
-<ul>
-<li>python &#xC124;&#xCE58;</li>
-</ul>
-<p>&#xC6D0;&#xD558;&#xB294; python &#xBC84;&#xC804;&#xC744; &#xC124;&#xCE58; &#xD55C;&#xB2E4;.</p>
-<pre><code class="lang-commandline">pyenv install 3.6.6
-</code></pre>
-<p>&#xC124;&#xCE58; &#xD655;&#xC778;</p>
-<pre><code class="lang-commandline">pyenv versions
-pyenv shell 3.6.6
-python --version
-</code></pre>
-<ul>
-<li>python-virtualenv &#xC124;&#xCE58;</li>
-</ul>
-<pre><code class="lang-commandline">sudo apt-get install -y python-virtualenv
-</code></pre>
-<ul>
-<li>virtualenv &#xD65C;&#xC131;&#xD654;</li>
+<li>virtualenv &#xC0DD;&#xC131; &amp; &#xD65C;&#xC131;&#xD654;</li>
 </ul>
 <pre><code class="lang-commandline">cd /var/www/onlineshop
-virtualenv --python=python3 venv
-source venv/bin/activate
+sudo python3 -m venv venv
 </code></pre>
 <ul>
 <li>Django &#xC124;&#xCE58;</li>
 </ul>
-<pre><code class="lang-commandline">pip install django
+<pre><code class="lang-commandline">sudo -s
+source venv/bin/activate
+pip install django
 </code></pre>
 <ul>
-<li>&#xD14C;&#xC2A4;&#xD2B8; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC0DD;&#xC131;</li>
+<li>Project &#xC0DD;&#xC131;</li>
 </ul>
-<pre><code class="lang-commandline">djang-admin startproject mysite .
+<pre><code class="lang-command">django-admin.py startproject mysite .
 python manage.py migrate
 python manage.py createsuperuser
+</code></pre>
+<ul>
+<li>&#xB370;&#xC774;&#xD130;&#xBCA0;&#xC774;&#xC2A4; &#xC18C;&#xC720; &#xBCC0;&#xACBD;</li>
+</ul>
+<pre><code class="lang-commandline">sudo chown deployer:www-data db.sqlinte3
 </code></pre>
 <ul>
 <li>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC14B;&#xD305; &#xBCC0;&#xACBD;</li>
@@ -342,7 +319,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, &apos;static/&apos;)
 <ul>
 <li>&#xC11C;&#xBC84; &#xAD6C;&#xB3D9; &#xD14C;&#xC2A4;&#xD2B8;</li>
 </ul>
-<pre><code class="lang-commandline">python manage.py runserver 0.0.0.0:8080
+<pre><code class="lang-commandline">exit
+source venv/bin/activate
+python manage.py runserver 0.0.0.0:8000
 </code></pre>
 
                                 
@@ -387,7 +366,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, &apos;static/&apos;)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Django","level":"1.1.4","depth":2,"next":{"title":"uWSGI","level":"1.1.5","depth":2,"path":"posts/uwsgi.md","ref":"posts/uwsgi.md","articles":[]},"previous":{"title":"Ubuntu","level":"1.1.3","depth":2,"path":"posts/ubuntu_setting.md","ref":"posts/ubuntu_setting.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/django.md","mtime":"2018-08-31T02:47:59.876Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-03T07:17:06.972Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Django","level":"1.1.4","depth":2,"next":{"title":"uWSGI","level":"1.1.5","depth":2,"path":"posts/uwsgi.md","ref":"posts/uwsgi.md","articles":[]},"previous":{"title":"Ubuntu","level":"1.1.3","depth":2,"path":"posts/ubuntu_setting.md","ref":"posts/ubuntu_setting.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/django.md","mtime":"2018-09-03T08:08:31.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-03T08:08:43.292Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

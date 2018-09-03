@@ -88,7 +88,7 @@ sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
 
 ```commandline
 sudo groupadd djangogroup
-sudo useradd –g djangogroup –b /home –m –s /bin/bash deployer
+sudo useradd -g djangogroup -b /home -m -s /bin/bash deployer
 sudo passwd deployer
 ```
 
