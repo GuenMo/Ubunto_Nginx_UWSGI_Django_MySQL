@@ -1,6 +1,6 @@
 # Ubuntu 웹 서버 환경 설정
 
-## ssh 
+## ssh
 
 > <http://cmder.net/>
 
