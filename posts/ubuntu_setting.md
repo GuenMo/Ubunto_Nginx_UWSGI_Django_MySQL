@@ -103,20 +103,32 @@ sudo mkdir -p /mnt/ISSAC/Project
 - 마운트 할 대상을 연결 한다.
 
 ```commandline
-mount -t cifs //ip_addres/Project /mnt/ISSAC/Project -o uid=[ubuntu_id], username="XXXXXX",password="XXXXXX",domain="XXXXXX"
+sudo mount -t cifs //ip_addres/Project /mnt/ISSAC/Project -o uid=[ubuntu_id], username="XXXXXX",password="XXXXXX",domain="XXXXXX"
 ```
 
 - 마운트 해제
 
 ```commandline
-umount //ip_addres/Project
+sudo umount //ip_addres/Project
 ```
 
 - 부팅시 자동 마운트
 
 ```commandline
-nano /etc/fstab
-//ip_addres/Project /mnt/ISSAC/Project cifs uid=[ubuntu_id],username=XXXXXX,password=XXXXXXXX,domain=XXXXXXX 0 0
+sudo nano /etc/fstab
+
+//ip_addres/Project /mnt/ISSAC/Project cifs uid=[ubuntu_id],username=XXXXXX,password=XXXXXXXX,domain=XXXXXXX,rw,_netdev 0 0
+```
+
+```commandlien
+sudo nano /etc/network/if-up.d/fstab
+
+#!/bin/sh
+mount -a
+```
+
+```commandlien
+sudo chmod +x /etc/network/if-up.d/fstab
 ```
 
 - 마운트가 끝났으면, df 명령어로 연결을 확인해 봅니다.
