@@ -312,8 +312,8 @@ module = mysite.wsgi:application
 env = DJANGO_SETTINGS_MODULE=mysite.settings
 master = true
 processes = 5
-socket = %(base)/uwsgi/uwsgi/run/uwsgi.sock
-logto = %(base)/uwsgi/uwsgi/logs/uwsgi.log
+socket = %(base)/uwsgi/run/uwsgi.sock
+logto = %(base)/uwsgi/logs/uwsgi.log
 chown-socket = %(uid):www-data
 chmod-socket = 660
 vacuum = true
@@ -386,7 +386,7 @@ sudo systemctl status uwsgi
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"uWSGI","level":"1.1.5","depth":2,"next":{"title":"Nginx","level":"1.1.6","depth":2,"path":"posts/nginx.md","ref":"posts/nginx.md","articles":[]},"previous":{"title":"Django","level":"1.1.4","depth":2,"path":"posts/django.md","ref":"posts/django.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/uwsgi.md","mtime":"2018-09-06T18:25:48.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-06T18:26:19.220Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"uWSGI","level":"1.1.5","depth":2,"next":{"title":"Nginx","level":"1.1.6","depth":2,"path":"posts/nginx.md","ref":"posts/nginx.md","articles":[]},"previous":{"title":"Django","level":"1.1.4","depth":2,"path":"posts/django.md","ref":"posts/django.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/uwsgi.md","mtime":"2018-09-06T18:35:07.175Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-06T18:35:17.332Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

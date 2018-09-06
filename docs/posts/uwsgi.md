@@ -43,8 +43,8 @@ module = mysite.wsgi:application
 env = DJANGO_SETTINGS_MODULE=mysite.settings
 master = true
 processes = 5
-socket = %(base)/uwsgi/uwsgi/run/uwsgi.sock
-logto = %(base)/uwsgi/uwsgi/logs/uwsgi.log
+socket = %(base)/uwsgi/run/uwsgi.sock
+logto = %(base)/uwsgi/logs/uwsgi.log
 chown-socket = %(uid):www-data
 chmod-socket = 660
 vacuum = true
