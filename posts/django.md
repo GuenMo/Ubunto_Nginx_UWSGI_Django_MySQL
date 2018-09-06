@@ -3,16 +3,16 @@
 - 프로젝트 폴더 생성 & 권한, 소유권 설정
 
 ```commandline
-sudo mkdir -p /var/www/onlineshop
-sudo chown deployer:djangogroup /var/www/onlineshop
+sudo mkdir -p /var/www/live_test
+sudo chown deployer:djangogroup /var/www/live_test
 sudo usermod -a -G djangogroup ubuntu
-sudo chmod g+w /var/www/onlineshop
+sudo chmod g+w /var/www/live_test
 ```
 
 - virtualenv 생성 & 활성화
 
 ```commandline
-cd /var/www/onlineshop
+cd /var/www/live_test
 sudo python3 -m venv venv
 ```
 

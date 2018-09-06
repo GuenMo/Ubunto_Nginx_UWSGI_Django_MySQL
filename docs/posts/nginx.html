@@ -286,10 +286,10 @@
 <ul>
 <li>uWSGI&#xB97C; Nginx&#xC5D0; &#xC5F0;&#xACB0;</li>
 </ul>
-<pre><code class="lang-commandline">sudo nano /etc/nginx/sites-available/onlineshop
+<pre><code class="lang-commandline">sudo nano /etc/nginx/sites-available/live_test
 
 upstream django {
-    server unix:/var/www/onlineshop/run/uwsgi.sock;
+    server unix:/var/www/live_test/uwsgi/run/uwsgi.sock;
 }
 
 server {
@@ -300,11 +300,11 @@ server {
     location = /favicon.ico { access_log off; log_not_found off; }
 
     location /media  {
-        alias /var/www/onlineshop/media;
+        alias /var/www/live_test/media;
     }
 
     location /static {
-        alias /var/www/onlineshop/static;
+        alias /var/www/live_test/static;
     }
 
     location / {
@@ -316,7 +316,7 @@ server {
 <ul>
 <li>link &#xB9CC;&#xB4E4;&#xAE30;</li>
 </ul>
-<pre><code class="lang-commandline">sudo ln -s /etc/nginx/sites-available/onlineshop /etc/nginx/sites-enabled/
+<pre><code class="lang-commandline">sudo ln -s /etc/nginx/sites-available/live_test /etc/nginx/sites-enabled/
 sudo vim /etc/nginx/nginx.conf
 //&#xB0B4;&#xC6A9; &#xC218;&#xC815;
 server_name_hask_bucket_size 128
@@ -370,7 +370,7 @@ sudo systemctl restart nginx
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Nginx","level":"1.1.6","depth":2,"next":{"title":"Mysql","level":"1.1.7","depth":2,"path":"posts/mysql.md","ref":"posts/mysql.md","articles":[]},"previous":{"title":"uWSGI","level":"1.1.5","depth":2,"path":"posts/uwsgi.md","ref":"posts/uwsgi.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/nginx.md","mtime":"2018-09-03T08:31:59.606Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-05T14:41:54.041Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Nginx","level":"1.1.6","depth":2,"next":{"title":"Mysql","level":"1.1.7","depth":2,"path":"posts/mysql.md","ref":"posts/mysql.md","articles":[]},"previous":{"title":"uWSGI","level":"1.1.5","depth":2,"path":"posts/uwsgi.md","ref":"posts/uwsgi.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"BASE_URL":"https://guenmo.github.io/GuenMo/Ubutu-Django-Nginx-UWSGI"},"plugins":["ga"],"pluginsConfig":{"ga":{"configuration":"auto","token":"UA-123456-1"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/nginx.md","mtime":"2018-09-06T18:23:32.542Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-06T18:26:19.220Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

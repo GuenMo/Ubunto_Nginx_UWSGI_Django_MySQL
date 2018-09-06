@@ -18,10 +18,10 @@ sudo systemctl status nginx
 - uWSGI를 Nginx에 연결
 
 ```commandline
-sudo nano /etc/nginx/sites-available/onlineshop
+sudo nano /etc/nginx/sites-available/live_test
 
 upstream django {
-    server unix:/var/www/onlineshop/run/uwsgi.sock;
+    server unix:/var/www/live_test/uwsgi/run/uwsgi.sock;
 }
 
 server {
@@ -32,11 +32,11 @@ server {
     location = /favicon.ico { access_log off; log_not_found off; }
 
     location /media  {
-        alias /var/www/onlineshop/media;
+        alias /var/www/live_test/media;
     }
 
     location /static {
-        alias /var/www/onlineshop/static;
+        alias /var/www/live_test/static;
     }
 
     location / {
@@ -49,7 +49,7 @@ server {
 - link 만들기
 
 ```commandline
-sudo ln -s /etc/nginx/sites-available/onlineshop /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/live_test /etc/nginx/sites-enabled/
 sudo vim /etc/nginx/nginx.conf
 //내용 수정
 server_name_hask_bucket_size 128
